@@ -2,7 +2,7 @@
 
 ![Alt Text](https://github.com/wasidennis/AdaptSegNet/blob/master/figure/framework.png)
 
-Contact: Yi-Hsuan Tsai (wasidennis at gmail dot com) and Wei-Chih Hung (whung8@ucmerced.edu)
+Contact: Yi-Hsuan Tsai (wasidennis at gmail dot com) and Wei-Chih Hung (whung8 at ucmerced dot edu)
 
 ## Paper
 Learning to Adapt Structured Output Space for Semantic Segmentation <br />
