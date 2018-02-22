@@ -6,7 +6,7 @@ Contact: Yi-Hsuan Tsai (wasidennis at gmail dot com) and Wei-Chih Hung (whung8 a
 
 ## Paper
 Learning to Adapt Structured Output Space for Semantic Segmentation <br />
-Yi-Hsuan Tsai\*, Wei-Chih Hung\*, Samuel Schulter, Kihyuk Sohn, Ming-Hsuan Yang and Manmohan Chandraker <br />
+[Yi-Hsuan Tsai](https://sites.google.com/site/yihsuantsai/home)\*, [Wei-Chih Hung](https://hfslyc.github.io/)\*, [Samuel Schulter](https://samschulter.github.io/), [Kihyuk Sohn](https://sites.google.com/site/kihyuksml/), [Ming-Hsuan Yang](http://faculty.ucmerced.edu/mhyang/index.html) and [Manmohan Chandraker](http://cseweb.ucsd.edu/~mkchandraker/) <br />
 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2018 (\* indicates equal contribution).
 
 This is the authors' code described in the above paper. Please cite our paper if you find it useful for your research.
@@ -27,7 +27,7 @@ This is the authors' code described in the above paper. Please cite our paper if
 ## Installation
 * Install PyTorch from http://pytorch.org
 
-* Clone tis repo:
+* Clone this repo:
 ```
 git clone https://github.com/wasidennis/AdaptSegNet
 cd AdaptSegNet
