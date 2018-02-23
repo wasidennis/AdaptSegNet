@@ -22,10 +22,11 @@ Please cite our paper if you find it useful for your research.
 
 ## Example Results
 
-![Alt Text](https://github.com/wasidennis/AdaptSegNet/blob/master/figure/result_git.png)
+![](figure/result_git.png)
 
 ## Quantitative Reuslts
 
+![](figure/iou_git.png)
 
 ## Installation
 * Install PyTorch from http://pytorch.org
