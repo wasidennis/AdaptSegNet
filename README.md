@@ -26,7 +26,7 @@ Please cite our paper if you find it useful for your research.
 
 ## Quantitative Reuslts
 
-![](figure/iou_git.png)
+![](figure/iou_comparison.png)
 
 ## Installation
 * Install PyTorch from http://pytorch.org
