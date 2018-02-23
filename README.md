@@ -9,12 +9,12 @@ Learning to Adapt Structured Output Space for Semantic Segmentation <br />
 [Yi-Hsuan Tsai](https://sites.google.com/site/yihsuantsai/home)\*, [Wei-Chih Hung](https://hfslyc.github.io/)\*, [Samuel Schulter](https://samschulter.github.io/), [Kihyuk Sohn](https://sites.google.com/site/kihyuksml/), [Ming-Hsuan Yang](http://faculty.ucmerced.edu/mhyang/index.html) and [Manmohan Chandraker](http://cseweb.ucsd.edu/~mkchandraker/) <br />
 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2018 (\* indicates equal contribution).
 
-This is the authors' code described in the above paper. Please cite our paper if you find it useful for your research.
+Please cite our paper if you find it useful for your research.
 
 ```
-@inproceedings{Tsai_CVPR_2018,
+@article{Tsai_adaptseg_2018,
   author = {Y.-H. Tsai and W.-C. Hung and S. Schulter and K. Sohn and M.-H. Yang and M. Chandraker},
-  booktitle = {IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+  journal = {arXiv preprint arXiv:xxxx.xxxxx},
   title = {Learning to Adapt Structured Output Space for Semantic Segmentation},
   year = {2018}
 }
@@ -41,15 +41,25 @@ cd AdaptSegNet
 * Download the [Cityscapes Dataset](https://www.cityscapes-dataset.com/) as the target domain, and put it in the `dataset/cityscapes` folder
 
 ## Testing
-* Download the pre-trained model and put it in the `model` folder
+* Download the pre-trained [GTA5-to-Cityscapes model]() and put it in the `model` folder
 
-* 
+* Test the model
+
+```
+python ...
+```
 
 ## Training
-* 
+* Download the [initial weight]() and put it in the `model` folder
+
+* Train the GTA5-to-Cityscapes model
+
+```
+sh ...
+```
 
 ## Acknowledgment
-This code borrows a lot from [Pytorch-Deeplab](https://github.com/speedinghzl/Pytorch-Deeplab).
+This code is heavily borrowed from [Pytorch-Deeplab](https://github.com/speedinghzl/Pytorch-Deeplab).
 
 ## Note
 The model and code are available for non-commercial research purposes only.
