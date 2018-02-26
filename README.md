@@ -37,17 +37,22 @@ git clone https://github.com/wasidennis/AdaptSegNet
 cd AdaptSegNet
 ```
 ## Dataset
-* Download the [GTA5 Dataset](https://download.visinf.tu-darmstadt.de/data/from_games/) as the source domain, and put it in the `dataset/gta5` folder
+* Download the [GTA5 Dataset](https://download.visinf.tu-darmstadt.de/data/from_games/) as the source domain, and put it in the `data/GTA5` folder
 
-* Download the [Cityscapes Dataset](https://www.cityscapes-dataset.com/) as the target domain, and put it in the `dataset/cityscapes` folder
+* Download the [Cityscapes Dataset](https://www.cityscapes-dataset.com/) as the target domain, and put it in the `data/Cityscapes` folder
 
 ## Testing
 * Download the pre-trained [GTA5-to-Cityscapes model]() and put it in the `model` folder
 
-* Test the model
+* Test the model and save results in the `result` folder
 
 ```
-python ...
+python evaluate_cityscapes.py --restore-from ./model/GTA2Cityscapes_multi.py
+```
+
+* Compute the IoU on Cityscapes
+```
+python eval.py ./data/Cityscapes/data/gtFine/val result/cityscapes
 ```
 
 ## Training
@@ -56,7 +61,8 @@ python ...
 * Train the GTA5-to-Cityscapes model
 
 ```
-sh ...
+python train_adv_gta5_multi.py --snapshot-dir ./snapshots/GTA2Cityscapes_multi \
+                               --lambda-seg 0.1 --lambda-adv-target1 0.0002 --lambda-adv-target2 0.001
 ```
 
 ## Acknowledgment
