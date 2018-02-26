@@ -42,9 +42,9 @@ cd AdaptSegNet
 * Download the [Cityscapes Dataset](https://www.cityscapes-dataset.com/) as the target domain, and put it in the `data/Cityscapes` folder
 
 ## Testing
-* Download the pre-trained [GTA5-to-Cityscapes model]() and put it in the `model` folder
+* Download the pre-trained [GTA5-to-Cityscapes model](http://vllab.ucmerced.edu/ytsai/CVPR18/GTA2Cityscapes_multi.pth) and put it in the `model` folder
 
-* Test the model and save results in the `result` folder
+* Test the model and results will be saved in the `result` folder
 
 ```
 python evaluate_cityscapes.py --restore-from ./model/GTA2Cityscapes_multi.py
@@ -52,17 +52,17 @@ python evaluate_cityscapes.py --restore-from ./model/GTA2Cityscapes_multi.py
 
 * Compute the IoU on Cityscapes
 ```
-python eval.py ./data/Cityscapes/data/gtFine/val result/cityscapes
+python compute_iou.py ./data/Cityscapes/data/gtFine/val result/cityscapes
 ```
 
 ## Training
-* Download the [initial weight]() and put it in the `model` folder
+* Download the [initial weight](http://vllab.ucmerced.edu/ytsai/CVPR18/DeepLab_resnet_pretrained_init.pth) and put it in the `model` folder
 
 * Train the GTA5-to-Cityscapes model
 
 ```
-python train_adv_gta5_multi.py --snapshot-dir ./snapshots/GTA2Cityscapes_multi \
-                               --lambda-seg 0.1 --lambda-adv-target1 0.0002 --lambda-adv-target2 0.001
+python train_gta2cityscapes_multi.py --snapshot-dir ./snapshots/GTA2Cityscapes_multi \
+                                     --lambda-seg 0.1 --lambda-adv-target1 0.0002 --lambda-adv-target2 0.001
 ```
 
 ## Acknowledgment
