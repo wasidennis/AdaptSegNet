@@ -52,7 +52,7 @@ python evaluate_cityscapes.py --restore-from ./model/GTA2Cityscapes_multi.py
 
 * Compute the IoU on Cityscapes
 ```
-python eval.py ./data/Cityscapes/data/gtFine/val result/cityscapes
+python compute_iou.py ./data/Cityscapes/data/gtFine/val result/cityscapes
 ```
 
 ## Training
