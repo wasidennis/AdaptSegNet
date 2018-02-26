@@ -50,7 +50,7 @@ cd AdaptSegNet
 python evaluate_cityscapes.py --restore-from ./model/GTA2Cityscapes_multi.py
 ```
 
-* Compute the IoU on Cityscapes (thanks to the code from [VisDA Challenge](http://ai.bu.edu/visda-2017/)
+* Compute the IoU on Cityscapes (thanks to the code from [VisDA Challenge](http://ai.bu.edu/visda-2017/))
 ```
 python compute_iou.py ./data/Cityscapes/data/gtFine/val result/cityscapes
 ```
