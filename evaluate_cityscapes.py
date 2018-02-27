@@ -8,7 +8,7 @@ import torch
 from torch.autograd import Variable
 import torchvision.models as models
 import torch.nn.functional as F
-from torch.utils import data
+from torch.utils import data, model_zoo
 from model.deeplab_multi import Res_Deeplab
 from dataset.cityscapes_dataset import cityscapesDataSet
 from collections import OrderedDict
@@ -26,7 +26,7 @@ SAVE_PATH = './result/cityscapes'
 IGNORE_LABEL = 255
 NUM_CLASSES = 19
 NUM_STEPS = 500 # Number of images in the validation set.
-RESTORE_FROM = './model/GTA2Cityscapes_multi.pth'
+RESTORE_FROM = 'http://vllab.ucmerced.edu/ytsai/CVPR18/GTA2Cityscapes_multi-ed35151c.pth'
 SET = 'val'
 
 palette = [128, 64, 128, 244, 35, 232, 70, 70, 70, 102, 102, 156, 190, 153, 153, 153, 153, 153, 250, 170, 30,
@@ -82,7 +82,10 @@ def main():
 
     model = Res_Deeplab(num_classes=args.num_classes)
 
-    saved_state_dict = torch.load(args.restore_from)
+    if args.restore_from[:4] == 'http' :
+        saved_state_dict = model_zoo.load_url(args.restore_from)
+    else:
+        saved_state_dict = torch.load(args.restore_from)
     model.load_state_dict(saved_state_dict)
 
     model.eval()

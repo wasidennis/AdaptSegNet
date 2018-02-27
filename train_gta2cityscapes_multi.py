@@ -1,7 +1,7 @@
 import argparse
 import torch
 import torch.nn as nn
-from torch.utils import data
+from torch.utils import data, model_zoo
 import numpy as np
 import pickle
 from torch.autograd import Variable
@@ -41,7 +41,7 @@ NUM_STEPS = 250000
 NUM_STEPS_STOP = 80000  # early stopping
 POWER = 0.9
 RANDOM_SEED = 1234
-RESTORE_FROM = './model/DeepLab_resnet_pretrained_init.pth'
+RESTORE_FROM = 'http://vllab.ucmerced.edu/ytsai/CVPR18/DeepLab_resnet_pretrained_init-f81d91e8.pth'
 SAVE_NUM_IMAGES = 2
 SAVE_PRED_EVERY = 5000
 SNAPSHOT_DIR = './snapshots/'
@@ -182,7 +182,10 @@ def main():
     # Create network
     if args.model == 'DeepLab':
         model = Res_Deeplab(num_classes=args.num_classes)
-        saved_state_dict = torch.load(args.restore_from)
+        if args.restore_from[:4] == 'http' :
+            saved_state_dict = model_zoo.load_url(args.restore_from)
+        else:
+            saved_state_dict = torch.load(args.restore_from)
 
         new_params = model.state_dict().copy()
         for i in saved_state_dict:
