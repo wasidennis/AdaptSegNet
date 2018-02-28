@@ -56,12 +56,21 @@ python compute_iou.py ./data/Cityscapes/data/gtFine/val result/cityscapes
 ```
 
 ## Training
-* Train the GTA5-to-Cityscapes model
+* Train the GTA5-to-Cityscapes model (multi-level)
 
 ```
 python train_gta2cityscapes_multi.py --snapshot-dir ./snapshots/GTA2Cityscapes_multi \
                                      --lambda-seg 0.1 \
                                      --lambda-adv-target1 0.0002 --lambda-adv-target2 0.001
+```
+
+## Training
+* Train the GTA5-to-Cityscapes model (single-level)
+
+```
+python train_gta2cityscapes_multi.py --snapshot-dir ./snapshots/GTA2Cityscapes_multi \
+                                     --lambda-seg 0.0 \
+                                     --lambda-adv-target1 0.0 --lambda-adv-target2 0.001
 ```
 
 ## Related Implementation and Dataset
