@@ -64,7 +64,6 @@ python train_gta2cityscapes_multi.py --snapshot-dir ./snapshots/GTA2Cityscapes_m
                                      --lambda-adv-target1 0.0002 --lambda-adv-target2 0.001
 ```
 
-## Training
 * Train the GTA5-to-Cityscapes model (single-level)
 
 ```
