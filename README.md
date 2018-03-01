@@ -5,7 +5,7 @@ Pytorch implementation of our method for adapting semantic segmentation from the
 Contact: Yi-Hsuan Tsai (wasidennis at gmail dot com) and Wei-Chih Hung (whung8 at ucmerced dot edu)
 
 ## Paper
-Learning to Adapt Structured Output Space for Semantic Segmentation <br />
+[Learning to Adapt Structured Output Space for Semantic Segmentation](https://arxiv.org/abs/1802.10349) <br />
 [Yi-Hsuan Tsai](https://sites.google.com/site/yihsuantsai/home)\*, [Wei-Chih Hung](https://hfslyc.github.io/)\*, [Samuel Schulter](https://samschulter.github.io/), [Kihyuk Sohn](https://sites.google.com/site/kihyuksml/), [Ming-Hsuan Yang](http://faculty.ucmerced.edu/mhyang/index.html) and [Manmohan Chandraker](http://cseweb.ucsd.edu/~mkchandraker/) <br />
 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2018 (\* indicates equal contribution).
 
@@ -14,7 +14,7 @@ Please cite our paper if you find it useful for your research.
 ```
 @article{Tsai_adaptseg_2018,
   author = {Y.-H. Tsai and W.-C. Hung and S. Schulter and K. Sohn and M.-H. Yang and M. Chandraker},
-  journal = {arXiv preprint arXiv:xxxx.xxxxx},
+  journal = {arXiv preprint arXiv:1802.10349},
   title = {Learning to Adapt Structured Output Space for Semantic Segmentation},
   year = {2018}
 }
