@@ -29,7 +29,7 @@ Please cite our paper if you find it useful for your research.
 ![](figure/iou_comparison.png)
 
 ## Installation
-* Install PyTorch from http://pytorch.org
+* Install PyTorch from http://pytorch.org with Python2
 
 * Clone this repo
 ```
