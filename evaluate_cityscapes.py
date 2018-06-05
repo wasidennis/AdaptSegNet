@@ -9,7 +9,8 @@ from torch.autograd import Variable
 import torchvision.models as models
 import torch.nn.functional as F
 from torch.utils import data, model_zoo
-from model.deeplab_multi import Res_Deeplab
+from model.deeplab_multi import DeeplabMulti
+from model.deeplab_vgg import DeeplabVGG
 from dataset.cityscapes_dataset import cityscapesDataSet
 from collections import OrderedDict
 import os
@@ -27,7 +28,10 @@ IGNORE_LABEL = 255
 NUM_CLASSES = 19
 NUM_STEPS = 500 # Number of images in the validation set.
 RESTORE_FROM = 'http://vllab.ucmerced.edu/ytsai/CVPR18/GTA2Cityscapes_multi-ed35151c.pth'
+RESTORE_FROM_VGG = 'http://vllab.ucmerced.edu/ytsai/CVPR18/GTA2Cityscapes_vgg-ac4ac9f6.pth'
 SET = 'val'
+
+MODEL = 'DeeplabMulti'
 
 palette = [128, 64, 128, 244, 35, 232, 70, 70, 70, 102, 102, 156, 190, 153, 153, 153, 153, 153, 250, 170, 30,
            220, 220, 0, 107, 142, 35, 152, 251, 152, 70, 130, 180, 220, 20, 60, 255, 0, 0, 0, 0, 142, 0, 0, 70,
@@ -51,6 +55,8 @@ def get_arguments():
       A list of parsed arguments.
     """
     parser = argparse.ArgumentParser(description="DeepLab-ResNet Network")
+    parser.add_argument("--model", type=str, default=MODEL,
+                        help="Model Choice (DeeplabMulti/DeeplabVGG).")
     parser.add_argument("--data-dir", type=str, default=DATA_DIRECTORY,
                         help="Path to the directory containing the Cityscapes dataset.")
     parser.add_argument("--data-list", type=str, default=DATA_LIST_PATH,
@@ -80,7 +86,12 @@ def main():
     if not os.path.exists(args.save):
         os.makedirs(args.save)
 
-    model = Res_Deeplab(num_classes=args.num_classes)
+    if args.model == 'DeeplabMulti':
+        model = DeeplabMulti(num_classes=args.num_classes)
+    elif args.model == 'DeeplabVGG':
+        model = DeeplabVGG(num_classes=args.num_classes)
+        if args.restore_from == RESTORE_FROM:
+            args.restore_from = RESTORE_FROM_VGG
 
     if args.restore_from[:4] == 'http' :
         saved_state_dict = model_zoo.load_url(args.restore_from)
@@ -100,8 +111,12 @@ def main():
         if index % 100 == 0:
             print '%d processd' % index
         image, _, name = batch
-        output1, output2 = model(Variable(image, volatile=True).cuda(gpu0))
-        output = interp(output2).cpu().data[0].numpy()
+        if args.model == 'DeeplabMulti':
+            output1, output2 = model(Variable(image, volatile=True).cuda(gpu0))
+            output = interp(output2).cpu().data[0].numpy()
+        elif args.model == 'DeeplabVGG':
+            output = model(Variable(image, volatile=True).cuda(gpu0))
+            output = interp(output).cpu().data[0].numpy()
 
         output = output.transpose(1,2,0)
         output = np.asarray(np.argmax(output, axis=2), dtype=np.uint8)

@@ -118,10 +118,10 @@ class Classifier_Module(nn.Module):
             return out
 
 
-class ResNet(nn.Module):
+class ResNetMulti(nn.Module):
     def __init__(self, block, layers, num_classes):
         self.inplanes = 64
-        super(ResNet, self).__init__()
+        super(ResNetMulti, self).__init__()
         self.conv1 = nn.Conv2d(3, 64, kernel_size=7, stride=2, padding=3,
                                bias=False)
         self.bn1 = nn.BatchNorm2d(64, affine=affine_par)
@@ -224,7 +224,7 @@ class ResNet(nn.Module):
                 {'params': self.get_10x_lr_params(), 'lr': 10 * args.learning_rate}]
 
 
-def Res_Deeplab(num_classes=21):
-    model = ResNet(Bottleneck, [3, 4, 23, 3], num_classes)
+def DeeplabMulti(num_classes=21):
+    model = ResNetMulti(Bottleneck, [3, 4, 23, 3], num_classes)
     return model
 

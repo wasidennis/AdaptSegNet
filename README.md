@@ -50,6 +50,12 @@ cd AdaptSegNet
 python evaluate_cityscapes.py --restore-from ./model/GTA2Cityscapes_multi-ed35151c.pth
 ```
 
+* Or, test the VGG-16 based model [Model Link](http://vllab.ucmerced.edu/ytsai/CVPR18/GTA2Cityscapes_vgg-ac4ac9f6.pth)
+
+```
+python evaluate_cityscapes.py --model DeeplabVGG --restore-from ./model/GTA2Cityscapes_vgg-ac4ac9f6.pth
+```
+
 * Compute the IoU on Cityscapes (thanks to the code from [VisDA Challenge](http://ai.bu.edu/visda-2017/))
 ```
 python compute_iou.py ./data/Cityscapes/data/gtFine/val result/cityscapes
@@ -81,6 +87,7 @@ This code is heavily borrowed from [Pytorch-Deeplab](https://github.com/speeding
 
 ## Note
 The model and code are available for non-commercial research purposes only.
+* 06/04/2018: update pretrained VGG-16 model 
 * 02/2018: code released
 
 
