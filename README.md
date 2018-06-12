@@ -12,9 +12,9 @@ IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2018 (**spotl
 Please cite our paper if you find it useful for your research.
 
 ```
-@article{Tsai_adaptseg_2018,
+@inproceedings{Tsai_adaptseg_2018,
   author = {Y.-H. Tsai and W.-C. Hung and S. Schulter and K. Sohn and M.-H. Yang and M. Chandraker},
-  journal = {arXiv preprint arXiv:1802.10349},
+  booktitle = {IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
   title = {Learning to Adapt Structured Output Space for Semantic Segmentation},
   year = {2018}
 }
