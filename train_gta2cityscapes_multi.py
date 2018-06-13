@@ -15,7 +15,7 @@ import os.path as osp
 import matplotlib.pyplot as plt
 import random
 
-from model.deeplab_multi import Res_Deeplab
+from model.deeplab_multi import DeeplabMulti
 from model.discriminator import FCDiscriminator
 from utils.loss import CrossEntropy2d
 from dataset.gta5_dataset import GTA5DataSet
