@@ -38,7 +38,7 @@ LEARNING_RATE = 2.5e-4
 MOMENTUM = 0.9
 NUM_CLASSES = 19
 NUM_STEPS = 250000
-NUM_STEPS_STOP = 80000  # early stopping
+NUM_STEPS_STOP = 120000  # early stopping
 POWER = 0.9
 RANDOM_SEED = 1234
 RESTORE_FROM = 'http://vllab.ucmerced.edu/ytsai/CVPR18/DeepLab_resnet_pretrained_init-f81d91e8.pth'
@@ -170,11 +170,11 @@ def adjust_learning_rate_D(optimizer, i_iter):
 def main():
     """Create the model and start the training."""
 
-    h, w = map(int, args.input_size.split(','))
-    input_size = (h, w)
+    w, h = map(int, args.input_size.split(','))
+    input_size = (w, h)
 
-    h, w = map(int, args.input_size_target.split(','))
-    input_size_target = (h, w)
+    w, h = map(int, args.input_size_target.split(','))
+    input_size_target = (w, h)
 
     cudnn.enabled = True
     gpu = args.gpu
@@ -395,9 +395,9 @@ def main():
 
         if i_iter >= args.num_steps_stop - 1:
             print 'save model ...'
-            torch.save(model.state_dict(), osp.join(args.snapshot_dir, 'GTA5_' + str(args.num_steps) + '.pth'))
-            torch.save(model_D1.state_dict(), osp.join(args.snapshot_dir, 'GTA5_' + str(args.num_steps) + '_D1.pth'))
-            torch.save(model_D2.state_dict(), osp.join(args.snapshot_dir, 'GTA5_' + str(args.num_steps) + '_D2.pth'))
+            torch.save(model.state_dict(), osp.join(args.snapshot_dir, 'GTA5_' + str(args.num_steps_stop) + '.pth'))
+            torch.save(model_D1.state_dict(), osp.join(args.snapshot_dir, 'GTA5_' + str(args.num_steps_stop) + '_D1.pth'))
+            torch.save(model_D2.state_dict(), osp.join(args.snapshot_dir, 'GTA5_' + str(args.num_steps_stop) + '_D2.pth'))
             break
 
         if i_iter % args.save_pred_every == 0 and i_iter != 0:
