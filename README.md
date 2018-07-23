@@ -30,6 +30,7 @@ Please cite our paper if you find it useful for your research.
 
 ## Installation
 * Install PyTorch from http://pytorch.org with Python2
+  - Note: This repo was trained with PyTorch0.2, the training code is currently not compatible with PyTorch0.4 (testibg/evaluation is fine). We will migrate the code to PyTorch0.4 soon.
 
 * Clone this repo
 ```
