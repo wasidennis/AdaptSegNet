@@ -3,6 +3,7 @@ import scipy
 from scipy import ndimage
 import numpy as np
 import sys
+from packaging import version
 
 import torch
 from torch.autograd import Variable
@@ -105,7 +106,11 @@ def main():
     testloader = data.DataLoader(cityscapesDataSet(args.data_dir, args.data_list, crop_size=(1024, 512), mean=IMG_MEAN, scale=False, mirror=False, set=args.set),
                                     batch_size=1, shuffle=False, pin_memory=True)
 
-    interp = nn.Upsample(size=(1024, 2048), mode='bilinear')
+
+    if version.parse(torch.__version__) >= version.parse('0.4.0'):
+        interp = nn.Upsample(size=(1024, 2048), mode='bilinear', align_corners=True)
+    else:
+        interp = nn.Upsample(size=(1024, 2048), mode='bilinear')
 
     for index, batch in enumerate(testloader):
         if index % 100 == 0:
