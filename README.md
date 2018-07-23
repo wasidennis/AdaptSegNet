@@ -30,7 +30,7 @@ Please cite our paper if you find it useful for your research.
 
 ## Installation
 * Install PyTorch from http://pytorch.org with Python2
-  - Note: This repo was trained with PyTorch0.2, the training code is currently not compatible with PyTorch0.4 (testibg/evaluation is fine). We will migrate the code to PyTorch0.4 soon.
+  - Note: This repo was trained with PyTorch0.2, the training code is currently not compatible with PyTorch0.4 (testing/evaluation is fine). We will migrate the code to PyTorch0.4 soon.
 
 * Clone this repo
 ```
@@ -88,6 +88,7 @@ This code is heavily borrowed from [Pytorch-Deeplab](https://github.com/speeding
 
 ## Note
 The model and code are available for non-commercial research purposes only.
+* 07/23/2018: update evaluation code for PyTorch 0.4
 * 06/04/2018: update pretrained VGG-16 model 
 * 02/2018: code released
 
