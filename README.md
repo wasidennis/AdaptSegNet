@@ -31,7 +31,7 @@ Please cite our paper if you find it useful for your research.
 ## Installation
 * Install PyTorch from http://pytorch.org with Python 2 and CUDA 8.0
 
-* **NEW** PyTorch 0.4 with Python 3
+* **NEW** PyTorch 0.4 with Python 3 and CUDA 8.0
   - Usage: replace the training and evaluation codes with the ones in the `pytorch_0.4` folder
   - Update: tensorboard is provided by adding `--tensorboard` in the command
   - Note: the single-level model works as expected, while the multi-level model requires smaller weights, e.g., `--lambda-adv-target1 0.00005 --lambda-adv-target2 0.0005`. We will investigate this issue soon.
