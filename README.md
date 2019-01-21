@@ -32,9 +32,9 @@ Please cite our paper if you find it useful for your research.
 * Install PyTorch from http://pytorch.org with Python 2 and CUDA 8.0
 
 * **NEW** PyTorch 0.4 with Python 3
-- Usage: replace the training and evaluation codes with the ones in the `pytorch_0.4` folder
-- Update: tensorboard is provided by adding `--tensorboard` in the command
-- Note: currently the single-level model works as expected, and the multi-level model requires small weights, e.g., `--lambda-adv-target1 0.00005 --lambda-adv-target2 0.0005`. We will investigate this issue soon.
+  - Usage: replace the training and evaluation codes with the ones in the `pytorch_0.4` folder
+  - Update: tensorboard is provided by adding `--tensorboard` in the command
+  - Note: currently the single-level model works as expected, and the multi-level model requires small weights, e.g., `--lambda-adv-target1 0.00005 --lambda-adv-target2 0.0005`. We will investigate this issue soon.
 
 * Clone this repo
 ```
@@ -93,6 +93,7 @@ This code is heavily borrowed from [Pytorch-Deeplab](https://github.com/speeding
 
 ## Note
 The model and code are available for non-commercial research purposes only.
+* 01/2019: upate the training code for PyTorch 0.4
 * 07/23/2018: update evaluation code for PyTorch 0.4
 * 06/04/2018: update pretrained VGG-16 model 
 * 02/2018: code released
