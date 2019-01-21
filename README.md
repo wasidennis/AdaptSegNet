@@ -34,7 +34,7 @@ Please cite our paper if you find it useful for your research.
 * **NEW** PyTorch 0.4 with Python 3
   - Usage: replace the training and evaluation codes with the ones in the `pytorch_0.4` folder
   - Update: tensorboard is provided by adding `--tensorboard` in the command
-  - Note: currently the single-level model works as expected, and the multi-level model requires small weights, e.g., `--lambda-adv-target1 0.00005 --lambda-adv-target2 0.0005`. We will investigate this issue soon.
+  - Note: the single-level model works as expected, while the multi-level model requires smaller weights, e.g., `--lambda-adv-target1 0.00005 --lambda-adv-target2 0.0005`. We will investigate this issue soon.
 
 * Clone this repo
 ```
