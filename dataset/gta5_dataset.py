@@ -22,7 +22,7 @@ class GTA5DataSet(data.Dataset):
         # self.mean_bgr = np.array([104.00698793, 116.66876762, 122.67891434])
         self.img_ids = [i_id.strip() for i_id in open(list_path)]
         if not max_iters==None:
-	    self.img_ids = self.img_ids * int(np.ceil(float(max_iters) / len(self.img_ids)))
+            self.img_ids = self.img_ids * int(np.ceil(float(max_iters) / len(self.img_ids)))
         self.files = []
 
         self.id_to_trainid = {7: 0, 8: 1, 11: 2, 12: 3, 13: 4, 17: 5,
