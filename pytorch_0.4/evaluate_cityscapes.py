@@ -9,6 +9,7 @@ from torch.autograd import Variable
 import torchvision.models as models
 import torch.nn.functional as F
 from torch.utils import data, model_zoo
+from model.deeplab import Res_Deeplab
 from model.deeplab_multi import DeeplabMulti
 from model.deeplab_vgg import DeeplabVGG
 from dataset.cityscapes_dataset import cityscapesDataSet
@@ -28,6 +29,7 @@ NUM_CLASSES = 19
 NUM_STEPS = 500 # Number of images in the validation set.
 RESTORE_FROM = 'http://vllab.ucmerced.edu/ytsai/CVPR18/GTA2Cityscapes_multi-ed35151c.pth'
 RESTORE_FROM_VGG = 'http://vllab.ucmerced.edu/ytsai/CVPR18/GTA2Cityscapes_vgg-ac4ac9f6.pth'
+RESTORE_FROM_ORC = 'http://vllab1.ucmerced.edu/~whung/adaptSeg/cityscapes_oracle-b7b9934.pth'
 SET = 'val'
 
 MODEL = 'DeeplabMulti'
@@ -55,7 +57,7 @@ def get_arguments():
     """
     parser = argparse.ArgumentParser(description="DeepLab-ResNet Network")
     parser.add_argument("--model", type=str, default=MODEL,
-                        help="Model Choice (DeeplabMulti/DeeplabVGG).")
+                        help="Model Choice (DeeplabMulti/DeeplabVGG/Oracle).")
     parser.add_argument("--data-dir", type=str, default=DATA_DIRECTORY,
                         help="Path to the directory containing the Cityscapes dataset.")
     parser.add_argument("--data-list", type=str, default=DATA_LIST_PATH,
@@ -84,6 +86,10 @@ def main():
 
     if args.model == 'DeeplabMulti':
         model = DeeplabMulti(num_classes=args.num_classes)
+    elif args.model == 'Oracle':
+        model = Res_Deeplab(num_classes=args.num_classes)
+        if args.restore_from == RESTORE_FROM:
+            args.restore_from = RESTORE_FROM_ORC
     elif args.model == 'DeeplabVGG':
         model = DeeplabVGG(num_classes=args.num_classes)
         if args.restore_from == RESTORE_FROM:
@@ -114,7 +120,7 @@ def main():
         if args.model == 'DeeplabMulti':
             output1, output2 = model(image)
             output = interp(output2).cpu().data[0].numpy()
-        elif args.model == 'DeeplabVGG':
+        elif args.model == 'DeeplabVGG' or args.model == 'Oracle':
             output = model(image)
             output = interp(output).cpu().data[0].numpy()
 
