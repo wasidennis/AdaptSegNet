@@ -26,7 +26,7 @@ Please cite our paper if you find it useful for your research.
 
 ## Quantitative Reuslts
 
-![](figure/iou_comparison.png)
+![](figure/iou_comparison_v2.png)
 
 ## Installation
 * Install PyTorch from http://pytorch.org with Python 2 and CUDA 8.0
