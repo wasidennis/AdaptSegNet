@@ -108,7 +108,7 @@ python train_gta2cityscapes_multi.py --snapshot-dir ./snapshots/GTA2Cityscapes_s
 This code is heavily borrowed from [Pytorch-Deeplab](https://github.com/speedinghzl/Pytorch-Deeplab).
 ## Note
 The model and code are available for non-commercial research purposes only.
-* 10/2019: update performance and training/evaluation codes for using LS-GAN and Synscapes (especially thanks to Yan-Ting Liu)
+* 10/2019: update performance and training/evaluation codes for using LS-GAN and Synscapes (especially thanks to [Yan-Ting Liu](https://github.com/wheatdog) for helping experiments)
 * 01/2019: upate the training code for PyTorch 0.4
 * 07/23/2018: update evaluation code for PyTorch 0.4
 * 06/04/2018: update pretrained VGG-16 model 
