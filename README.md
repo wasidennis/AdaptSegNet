@@ -31,7 +31,12 @@ Please cite our paper if you find it useful for your research.
 ## Installation
 * Install PyTorch from http://pytorch.org with Python 2 and CUDA 8.0
 
-* **NEW** PyTorch 0.4 with Python 3 and CUDA 8.0
+* **NEW** Add the LS-GAN objective to improve the performance
+  - Usage: add `--gan LS` option during training
+  - Performance: check the appendix of the updated [arXiv paper](https://arxiv.org/abs/1802.10349)
+  - [Pre-trained modeles](https://www.dropbox.com/s/sif9cd6ad4s9y5d/AdaptSegNet_LSGAN_models.zip?dl=0)
+
+* PyTorch 0.4 with Python 3 and CUDA 8.0
   - Usage: replace the training and evaluation codes with the ones in the `pytorch_0.4` folder
   - Update: tensorboard is provided by adding `--tensorboard` in the command
   - Note: the single-level model works as expected, while the multi-level model requires smaller weights, e.g., `--lambda-adv-target1 0.00005 --lambda-adv-target2 0.0005`. We will investigate this issue soon.
@@ -84,7 +89,7 @@ python train_gta2cityscapes_multi.py --snapshot-dir ./snapshots/GTA2Cityscapes_s
 ```
 
 ## Related Implementation and Dataset
-* Y.-H. Tsai, K. Sohn, S. Schulter, and M. Chandraker. Domain Adaptation for Structured Output via Discriminative Patch Representations. In ICCV, 2019. (Oral) [[paper]](https://arxiv.org/abs/1901.05427v3) [[project]](https://sites.google.com/site/yihsuantsai/research/iccv19-adapt-seg)
+* Y.-H. Tsai, K. Sohn, S. Schulter, and M. Chandraker. Domain Adaptation for Structured Output via Discriminative Patch Representations. In ICCV, 2019. (Oral) [[paper]](https://arxiv.org/abs/1901.05427v3) [[project]](http://www.nec-labs.com/~mas/adapt-seg/adapt-seg.html)
 * W.-C. Hung, Y.-H Tsai, Y.-T. Liou, Y.-Y. Lin, and M.-H. Yang. Adversarial Learning for Semi-supervised Semantic Segmentation. In BMVC, 2018. [[paper]](https://arxiv.org/abs/1802.07934) [[code]](https://github.com/hfslyc/AdvSemiSeg)
 * Y.-H. Chen, W.-Y. Chen, Y.-T. Chen, B.-C. Tsai, Y.-C. Frank Wang, and M. Sun. No More Discrimination: Cross City Adaptation of Road Scene Segmenters. In ICCV 2017. [[paper]](https://arxiv.org/abs/1704.08509) [[project]](https://yihsinchen.github.io/segmentation_adaptation/)
 
@@ -93,6 +98,7 @@ This code is heavily borrowed from [Pytorch-Deeplab](https://github.com/speeding
 
 ## Note
 The model and code are available for non-commercial research purposes only.
+* 10/2019: update performance and training/evaluation codes for using LS-GAN
 * 01/2019: upate the training code for PyTorch 0.4
 * 07/23/2018: update evaluation code for PyTorch 0.4
 * 06/04/2018: update pretrained VGG-16 model 
