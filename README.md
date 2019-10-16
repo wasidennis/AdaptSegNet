@@ -32,9 +32,9 @@ Please cite our paper if you find it useful for your research.
 * Install PyTorch from http://pytorch.org with Python 2 and CUDA 8.0
 
 * **NEW** Add the LS-GAN objective to improve the performance
-  - Usage: add `--gan LS` option during training
+  - Usage: add `--gan LS` option during training (see below for more details)
   - Performance: check the appendix of the updated [arXiv paper](https://arxiv.org/abs/1802.10349)
-  - [Pre-trained modeles](https://www.dropbox.com/s/sif9cd6ad4s9y5d/AdaptSegNet_LSGAN_models.zip?dl=0)
+  - [Pre-trained models](https://www.dropbox.com/s/sif9cd6ad4s9y5d/AdaptSegNet_LSGAN_models.zip?dl=0)
 
 * PyTorch 0.4 with Python 3 and CUDA 8.0
   - Usage: replace the training and evaluation codes with the ones in the `pytorch_0.4` folder
@@ -52,6 +52,8 @@ cd AdaptSegNet
 * Download the [Cityscapes Dataset](https://www.cityscapes-dataset.com/) as the target domain, and put it in the `data/Cityscapes` folder
 
 ## Testing
+* **NEW** Download pre-trained [single-level models](https://www.dropbox.com/s/sif9cd6ad4s9y5d/AdaptSegNet_LSGAN_models.zip?dl=0) using LS-GAN and on [Synscapes](https://7dlabs.com/synscapes-overview)
+
 * Download the pre-trained multi-level [GTA5-to-Cityscapes model](http://vllab.ucmerced.edu/ytsai/CVPR18/GTA2Cityscapes_multi-ed35151c.pth) and put it in the `model` folder
 
 * Test the model and results will be saved in the `result` folder
@@ -72,6 +74,15 @@ python compute_iou.py ./data/Cityscapes/data/gtFine/val result/cityscapes
 ```
 
 ## Training Examples
+* **NEW** Train the GTA5-to-Cityscapes model (single-level with LS-GAN)
+
+```
+python train_gta2cityscapes_multi.py --snapshot-dir ./snapshots/GTA2Cityscapes_single_lsgan \
+                                     --lambda-seg 0.0 \
+                                     --lambda-adv-target1 0.0 --lambda-adv-target2 0.001 \
+                                     --gan LS
+```
+
 * Train the GTA5-to-Cityscapes model (multi-level)
 
 ```
@@ -98,7 +109,7 @@ This code is heavily borrowed from [Pytorch-Deeplab](https://github.com/speeding
 
 ## Note
 The model and code are available for non-commercial research purposes only.
-* 10/2019: update performance and training/evaluation codes for using LS-GAN
+* 10/2019: update performance and training/evaluation codes for using LS-GAN and on Synscapes
 * 01/2019: upate the training code for PyTorch 0.4
 * 07/23/2018: update evaluation code for PyTorch 0.4
 * 06/04/2018: update pretrained VGG-16 model 
