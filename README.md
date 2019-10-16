@@ -52,7 +52,7 @@ cd AdaptSegNet
 * Download the [Cityscapes Dataset](https://www.cityscapes-dataset.com/) as the target domain, and put it in the `data/Cityscapes` folder
 
 ## Testing
-* **NEW** Download pre-trained [single-level models](https://www.dropbox.com/s/sif9cd6ad4s9y5d/AdaptSegNet_LSGAN_models.zip?dl=0) using LS-GAN and on [Synscapes](https://7dlabs.com/synscapes-overview)
+* **NEW** Download pre-trained [single-level models](https://www.dropbox.com/s/sif9cd6ad4s9y5d/AdaptSegNet_LSGAN_models.zip?dl=0) using LS-GAN and new models on [Synscapes](https://7dlabs.com/synscapes-overview)
 
 * Download the pre-trained multi-level [GTA5-to-Cityscapes model](http://vllab.ucmerced.edu/ytsai/CVPR18/GTA2Cityscapes_multi-ed35151c.pth) and put it in the `model` folder
 
