@@ -104,6 +104,11 @@ def main():
         saved_state_dict = model_zoo.load_url(args.restore_from)
     else:
         saved_state_dict = torch.load(args.restore_from)
+    ### for running different versions of pytorch
+    model_dict = model.state_dict()
+    saved_state_dict = {k: v for k, v in saved_state_dict.items() if k in model_dict}
+    model_dict.update(saved_state_dict)
+    ###
     model.load_state_dict(saved_state_dict)
 
     model.eval()

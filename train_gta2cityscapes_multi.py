@@ -51,6 +51,7 @@ LEARNING_RATE_D = 1e-4
 LAMBDA_SEG = 0.1
 LAMBDA_ADV_TARGET1 = 0.0002
 LAMBDA_ADV_TARGET2 = 0.001
+GAN = 'Vanilla'
 
 TARGET = 'cityscapes'
 SET = 'train'
@@ -131,6 +132,8 @@ def get_arguments():
                         help="choose gpu device.")
     parser.add_argument("--set", type=str, default=SET,
                         help="choose adaptation set.")
+    parser.add_argument("--gan", type=str, default=GAN,
+                        help="choose the GAN objective.")
     return parser.parse_args()
 
 
@@ -246,7 +249,10 @@ def main():
     optimizer_D2 = optim.Adam(model_D2.parameters(), lr=args.learning_rate_D, betas=(0.9, 0.99))
     optimizer_D2.zero_grad()
 
-    bce_loss = torch.nn.BCEWithLogitsLoss()
+    if args.gan == 'Vanilla':
+        bce_loss = torch.nn.BCEWithLogitsLoss()
+    elif args.gan == 'LS':
+        bce_loss = torch.nn.MSELoss()
 
     interp = nn.Upsample(size=(input_size[1], input_size[0]), mode='bilinear')
     interp_target = nn.Upsample(size=(input_size_target[1], input_size_target[0]), mode='bilinear')
