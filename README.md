@@ -51,7 +51,7 @@ cd AdaptSegNet
 
 ## Testing
 * **NEW** Update results using LS-GAN and using [Synscapes](https://7dlabs.com/synscapes-overview) as the source domain
-  - Performance: check the appendix of the updated [arXiv paper](https://arxiv.org/abs/1802.10349)
+  - Performance: check the appendix of the updated [arXiv paper](https://arxiv.org/abs/1802.10349) (updated on 10/17/2019)
   - [Pre-trained models](https://www.dropbox.com/s/sif9cd6ad4s9y5d/AdaptSegNet_LSGAN_models.zip?dl=0)
 
 * Download the pre-trained multi-level [GTA5-to-Cityscapes model](http://vllab.ucmerced.edu/ytsai/CVPR18/GTA2Cityscapes_multi-ed35151c.pth) and put it in the `model` folder
