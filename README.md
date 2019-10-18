@@ -79,7 +79,7 @@ python compute_iou.py ./data/Cityscapes/data/gtFine/val result/cityscapes
 ```
 python train_gta2cityscapes_multi.py --snapshot-dir ./snapshots/GTA2Cityscapes_single_lsgan \
                                      --lambda-seg 0.0 \
-                                     --lambda-adv-target1 0.0 --lambda-adv-target2 0.005 \
+                                     --lambda-adv-target1 0.0 --lambda-adv-target2 0.01 \
                                      --gan LS
 ```
 
