@@ -100,7 +100,7 @@ python train_gta2cityscapes_multi.py --snapshot-dir ./snapshots/GTA2Cityscapes_s
 ```
 
 ## Related Implementation and Dataset
-* Y.-H. Tsai, K. Sohn, S. Schulter, and M. Chandraker. Domain Adaptation for Structured Output via Discriminative Patch Representations. In ICCV, 2019. (Oral) [[paper]](https://arxiv.org/abs/1901.05427v3) [[project]](http://www.nec-labs.com/~mas/adapt-seg/adapt-seg.html) [Implementation Guidance](https://docs.google.com/document/d/1w235D1vonIl6ER7AEfOOp8T0OFUiLwXCDFUdAra62RU/edit?usp=sharing)
+* Y.-H. Tsai, K. Sohn, S. Schulter, and M. Chandraker. Domain Adaptation for Structured Output via Discriminative Patch Representations. In ICCV, 2019. (Oral) [[paper]](https://arxiv.org/abs/1901.05427v3) [[project]](http://www.nec-labs.com/~mas/adapt-seg/adapt-seg.html) [[Implementation Guidance]](https://docs.google.com/document/d/1w235D1vonIl6ER7AEfOOp8T0OFUiLwXCDFUdAra62RU/edit?usp=sharing)
 * W.-C. Hung, Y.-H Tsai, Y.-T. Liou, Y.-Y. Lin, and M.-H. Yang. Adversarial Learning for Semi-supervised Semantic Segmentation. In BMVC, 2018. [[paper]](https://arxiv.org/abs/1802.07934) [[code]](https://github.com/hfslyc/AdvSemiSeg)
 * Y.-H. Chen, W.-Y. Chen, Y.-T. Chen, B.-C. Tsai, Y.-C. Frank Wang, and M. Sun. No More Discrimination: Cross City Adaptation of Road Scene Segmenters. In ICCV 2017. [[paper]](https://arxiv.org/abs/1704.08509) [[project]](https://yihsinchen.github.io/segmentation_adaptation/)
 
