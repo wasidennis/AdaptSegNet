@@ -50,7 +50,7 @@ cd AdaptSegNet
 * Download the [Cityscapes Dataset](https://www.cityscapes-dataset.com/) as the target domain, and put it in the `data/Cityscapes` folder
 
 ## Pre-trained Models
-* Please find our-pretrained models on three benchmark settings [here](https://www.dropbox.com/s/gpzm15ipyt01mis/DA_Seg_models.zip?dl=0)
+* Please find our-pretrained models using ResNet-101 on three benchmark settings [here](https://www.dropbox.com/s/gpzm15ipyt01mis/DA_Seg_models.zip?dl=0)
 
 * They include baselines (without adaptation and with feature adaptation) and our models (single-level and multi-level)
 
