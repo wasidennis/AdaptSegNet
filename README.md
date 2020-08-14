@@ -49,6 +49,11 @@ cd AdaptSegNet
 
 * Download the [Cityscapes Dataset](https://www.cityscapes-dataset.com/) as the target domain, and put it in the `data/Cityscapes` folder
 
+## Pre-trained Models
+* Please find our-pretrained models on three benchmark settings [here](https://www.dropbox.com/s/gpzm15ipyt01mis/DA_Seg_models.zip?dl=0)
+
+* They include baselines (without adaptation and with feature adaptation) and our models (single-level and multi-level)
+
 ## Testing
 * **NEW** Update results using LS-GAN and using [Synscapes](https://7dlabs.com/synscapes-overview) as the source domain
   - Performance: check the appendix of the updated [arXiv paper](https://arxiv.org/abs/1802.10349) (updated on 10/17/2019)
